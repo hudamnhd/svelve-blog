@@ -132,7 +132,125 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Merriweather", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.font-arab {
+  font-family: "indopak-nastaleeq";
+  font-weight: 600;
+  unicode-bidi: bidi-override;
+}
+.arab, .font-indopak {
+  white-space: pre-line;
+  font-family: "indopak-nastaleeq";
+  font-size: var(--arab-font-size);
+  line-height:1.55em;
+  margin-bottom:0.5em;
+  direction: rtl;
+}
+.translation>br {
+  margin-bottom:0;
+}
+p.translation {
+  font-weight: 400;
+  @apply mt-5 leading-7;
+}
+
+article {
+  @apply text-lg text-pretty px-4 md:px-6 lg:px-8 pb-24 pt-6;
+}
+
+/* Typography */
+article h1 {
+  @apply scroll-m-20 text-4xl font-bold tracking-tight;
+}
+
+article h2 {
+  @apply scroll-m-20 border-b pb-2 text-3xl font-bold tracking-tight mt-10 first:mt-0;
+}
+
+article h3 {
+  @apply scroll-m-20 text-2xl font-bold tracking-tight mt-8;
+}
+
+article h4 {
+  @apply scroll-m-20 text-xl font-bold tracking-tight mt-6;
+}
+
+article h5 {
+  @apply scroll-m-20 text-lg font-bold tracking-tight mt-4;
+}
+
+article p {
+  @apply leading-8 [&:not(:first-child)]:mt-4;
+}
+
+article div.arab-center, article div.arab-center + p {
+  @apply text-center;
+}
+
+article .arab {
+  @apply mt-4;
+}
+
+article h2 + .arab {
+  @apply mt-6;
+}
+
+.arab + p + p, .arab + details + details  {
+  @apply mt-5;
+}
+
+.arab + p + p + .arab, .arab + details + details + .arab, h2 + .arab {
+  @apply mt-7;
+}
+
+.arab + p > em {
+}
+
+/* hide terjemahan */
+.hide-translation .arab + p > em + p, .hide-translation .translation {
+  display: none;
+}
+
+article [class~=lead] {
+  @apply text-muted-foreground text-xl mt-0 leading-8;
+}
+
+article hr {
+  @apply my-3 border-border;
+}
+
+article a {
+  @apply font-bold break-all hover:underline decoration-2 underline-offset-4 text-blue-500 dark:text-blue-400;
+}
+
+.heading, .toc-link {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  word-break: break-word !important;
+  color: var(--text-primary) !important;
+}
+
+.toc-link {
+  word-break: break-word !important;
+  font-family: "Merriweather", sans-serif;
+  font-size: 0.9em;
+  color: var(--text-primary) !important;
+}
+
+article blockquote {
+  @apply mt-6 border-l-2 pl-6 italic;
+}
+
+article ul {
+  @apply my-6 ml-6 list-disc [&>li]:mt-1;
+}
+article ol {
+  @apply my-6 ml-6 list-decimal [&>li]:mt-1;
+}
+article li > ol {
+  @apply my-2;
 }

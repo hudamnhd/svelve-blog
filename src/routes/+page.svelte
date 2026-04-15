@@ -13,7 +13,7 @@
   ];
 </script>
 
-<div class="min-h-screen flex items-center justify-center px-6 text-lg">
+<div class="min-h-screen flex items-center justify-center px-6 font-mono">
   <div class="w-full max-w-xs">
 
     <!-- Header -->
